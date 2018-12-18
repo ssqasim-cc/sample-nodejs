@@ -1,0 +1,13 @@
+version: '3.0' # specify docker-compose version
+
+# Define the services/ containers to be run
+services:
+  nodejstest: # name of the second service
+    build: . # specify the directory of the Dockerfile
+    container_name: myest
+    ports:
+      - "3000:3000" #specify ports mapping
+    volumes:  #To mount volume if not copying
+      - .:/app
+      - /app/node_modules
+    
